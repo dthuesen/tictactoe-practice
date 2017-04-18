@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Tic Tac Toe</title>
+    
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Fontdiner+Swanky|Merienda+One|Michroma|Patrick+Hand');
+      
+      body {
+        width: 820px;
+        margin: auto;
+        background-color: #AFC9AF;
+        background-image:
+        repeating-linear-gradient(120deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 60px),
+        repeating-linear-gradient(60deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 60px),
+        linear-gradient(60deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1)),
+        linear-gradient(120deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1));
+        background-size: 70px 120px;
+      }
+      h1 {
+        font-family: 'Fontdiner Swanky', cursive, arial;
+        font-weight: 100;
+        text-align: center;
+        font-size: 5.8em;
+        line-height: .7em;
+        margin-top: 1em;
+        color: darkcyan;
+        text-shadow: 3px 3px lightyellow;
+      }
+      h2 {
+        font-family: 'Fontdiner Swanky', cursive, arial;
+        font-weight: 100;
+        text-align: center;
+        font-size: 4.4em;
+        line-height: .5em;
+        padding-bottom: .8em;
+        border-bottom: 2px solid #333;
+        margin-left: 73px;
+        margin-right: 73px;
+        color: darkviolet;
+      }
+      h3 {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 3em;
+        font-weight: 100;
+        text-align: center;
+      }
+      h4 {
+        font-family: 'Merienda One', cursive;
+        font-size: 3.2em;
+        font-weight: bold;
+        text-align: left;
+        line-height: 1.8em;
+        color: #536603;
+        text-shadow: 1px 1px lightyellow;
+        margin-top: 20px;
+        margin-bottom: 25px;
+        border-bottom: 4px solid #536603;
+      }
+      h5 {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 2.3em;
+        font-weight: 100;
+        text-align: left;
+        line-height: 1.5em;
+        padding: 0;
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+      table {
+        margin: auto;
+        border-spacing: 0px;
+        border-collapse: collapse
+      }
+      tr {
+        padding: -3px;
+        margin: -3px;
+      }
+      .square {
+        height: 2em;
+        width: 2em;
+        font-family: 'Michroma', sans-serif, 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-size: 7em;
+        text-align: center;
+        border-width: 3px;
+        border-style: solid;
+        border-color: #528CC9;
+        background-color: #EAFCEA;
+        color: #53488E;
+      }
+      .square:hover {
+        background-color: lightskyblue;
+        color: whitesmoke;
+      }
+      .message {
+        font-family: 'Merienda One', cursive;
+        color: #536603;
+        font-size: 2.8em;
+        text-shadow: 1px 1px lightyellow;
+      }
+      .scoring {
+        width: 360px;
+        margin: auto 15px;
+        padding-left: 60px;
+        padding-right: 0px;
+        white-space: nowrap;
+      }
+      #restart {
+        width: 460px;
+        text-align: center;
+        background-color: darkorchid;
+        color: white;
+        cursor: pointer;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 15px;
+        padding: 2% 0; 
+        box-shadow: 3px 3px darkslategrey;
+        font-family: 'Merienda One', cursive;
+        font-size: 3em;
+        border-radius: 3px;
+      }
+      #restart:hover {
+        background-color: darkslateblue;
+        color: lightgoldenrodyellow;
+        box-shadow: 1px 1px darkslategrey;
+      }
+    </style>
+  </head>
+  <body onLoad="startGame();">
+    <h1>Tic Tac Toe </h1>
+    <h2>in JavaScript</h2>
+    <h3 id="message" class="message">Messages here.</h3>
+   
+    <table>
+      <tr>
+        <td class="square" id="s1" onClick="nextMove(this)"></td>
+        <td class="square" id="s2" onClick="nextMove(this)"></td>
+        <td class="square" id="s3" onClick="nextMove(this)"></td>
+      </tr>
+      <tr>
+        <td class="square" id="s4" onClick="nextMove(this)"></td>
+        <td class="square" id="s5" onClick="nextMove(this)"></td>
+        <td class="square" id="s6" onClick="nextMove(this)"></td>
+      </tr>
+      <tr>
+        <td class="square" id="s7" onClick="nextMove(this)"></td>
+        <td class="square" id="s8" onClick="nextMove(this)"></td>
+        <td class="square" id="s9" onClick="nextMove(this)"></td>
+      </tr>
+    </table>
+    <div class="scoring">
+      <h4>Scoring</h4>
+      <h5><strong>Player O</strong> has <span id="o-score">0</span> points</h5>
+      <h5><strong>Player X</strong> has <span id="x-score">0</span> points</h5>
+    </div>
+    <p onClick="startGame()" id="restart">New Game!</p>
+    <p><br><br><br></br></br></p>
+    <script src="main.js"></script>
+    
+  </body>
+</html>
